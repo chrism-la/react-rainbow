@@ -1,13 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import Color from './components/color';
 import React, { useState } from 'react';
 import ColorBlock from './ColorBlock';
 
 function App() {
-    let colors = ['violet', 'blue', 'lightblue', 'green'];
+    let [colors, setColors] = useState(['red', 'orange', 'yellow', 'green', 'lightblue', 'blue', 'violet']);
     let colorMap = colors.map((color, i) => {
-        return <ColorBlock color={color} />;
+        return <ColorBlock key={i} color={color} />;
     });
     return <div className="App">{colorMap}</div>;
 }
